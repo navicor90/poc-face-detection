@@ -22,8 +22,6 @@ def main(sleep_time=1, debug_mode=False):
             are_different_faces = not is_match(encodings[0], last_embedding)
 
         if are_different_faces or len(last_embedding) == 0:
-            # print(encodings[0])
-            print("request!!")
             request_record_face_data(encodings[0], locations, frame)
 
         last_embedding = encodings[0] if len(locations) > 0 else last_embedding
